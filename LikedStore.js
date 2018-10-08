@@ -10,8 +10,8 @@ class LikedStore {
     constructor()
     {
         getObjectFromAsynStorage(asyncStorageKeys.LikedIds)
-        .then(likedIds.map(likedIds => 
-            this.likedIds.push = likedIds))
+        .then(likedIds.map(liked => 
+            this.likedIds.push = liked))
     }
 
     @action LikedIdSetAny (likeId) {
@@ -29,6 +29,6 @@ class LikedStore {
         {
             this.saveNewArray= likeId;
         }
-        setItemInAsyncStorage(asyncStorageKeys.LikedIds, this.saveNewArray)
+        setObjectInAsyncStorage (asyncStorageKeys.LikedIds, this.saveNewArray)
       }
 }
