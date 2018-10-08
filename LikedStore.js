@@ -10,8 +10,6 @@ class LikedStore {
     constructor()
     {
         getObjectFromAsynStorage(asyncStorageKeys.LikedIds)
-        .then(this.likedIds.map(liked => 
-            this.likedIds.push = liked))
     }
 
     @action LikedIdSetAny (likeId) {
