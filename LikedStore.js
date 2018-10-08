@@ -21,7 +21,7 @@ class LikedStore {
             const likedIdStatus = this.likedIds.some( liked => liked === likeId);
             if(likedIdStatus==false)
             {
-                this.likedIds.concat([likeId])
+                this.likedIds=  this.likedIds.concat([likeId])
             }
             this.saveNewArray= this.likedIds;
         }
