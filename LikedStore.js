@@ -1,6 +1,6 @@
 import { observable , action } from 'mobx'
 import { AsyncStorage } from 'react-native'
-import { asyncStorageKeys, getObjectFromAsynStorage , setObjectInAsyncStorage } from './myAsyncStorage'
+import { asyncStorageKeys, getObjectFromAsynStorage , setObjectInAsyncStorage } from './LikedAsyncStorage'
 
 @observable likedIds = []
 
