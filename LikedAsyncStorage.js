@@ -1,4 +1,5 @@
 import { AsyncStorage } from 'react-native'
+import LikedStore from './LikedStore'
 
 const LikedIds = 'LikedIds'
 
@@ -9,7 +10,11 @@ export const asyncStorageKeys = {
 export const getObjectFromAsynStorage = (itemName) => {
     return  (async () => {  await AsyncStorage.getItem(itemName)
     .then(item=> {
-        if(item) JSON.parse(item)
+        if(item) 
+        {
+            JSON.parse(item)
+            LikedStore.likedIds=JSON.parse(item)
+        }
         else{
             reject(Error('Sonuç Boş'))
         }
