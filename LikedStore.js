@@ -31,4 +31,16 @@ class LikedStore {
         }
         setObjectInAsyncStorage (asyncStorageKeys.LikedIds, this.saveNewArray)
       }
+
+
+        UnLikedIdSet (likeId)  {
+          const index = this.likedIds.indexOf(likeId)
+                     if(index > -1)
+                     { 
+                         this.likedIds.splice(index,1)
+                     }
+        setObjectInAsyncStorage(asyncStorageKeys.LikedIds,this.likedIds)
+      }
+
 }
+export default new LikedStore();
