@@ -7,7 +7,7 @@ export const asyncStorageKeys = {
 }
 
 export const getObjectFromAsynStorage = (itemName) => {
-    return  (async () => { AsyncStorage.getItem(itemName)
+    return  (async () => {  await AsyncStorage.getItem(itemName)
     .then(item=> {
         if(item) JSON.parse(item)
         else{
