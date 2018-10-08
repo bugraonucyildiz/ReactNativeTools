@@ -31,7 +31,7 @@ class LikedStore {
       }
 
 
-        UnLikedIdSet (likeId)  {
+      @action  UnLikedIdSet (likeId)  {
           const index = this.likedIds.indexOf(likeId)
                      if(index > -1)
                      { 
