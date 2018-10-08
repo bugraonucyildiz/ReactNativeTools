@@ -2,9 +2,11 @@ import { observable , action } from 'mobx'
 import { AsyncStorage } from 'react-native'
 import { asyncStorageKeys, getObjectFromAsynStorage , setObjectInAsyncStorage } from './LikedAsyncStorage'
 
-@observable likedIds = []
 
 class LikedStore {
+    
+@observable likedIds = []
+
     constructor()
     {
         getObjectFromAsynStorage(asyncStorageKeys.LikedIds)
@@ -21,12 +23,12 @@ class LikedStore {
             {
                 this.likedIds.concat([likeId])
             }
-            saveNewArray= this.likedIds;
+            this.saveNewArray= this.likedIds;
         }
         else
         {
-            saveNewArray= likeId;
+            this.saveNewArray= likeId;
         }
-        setItemInAsyncStorage(asyncStorageKeys.LikedIds, saveNewArray)
+        setItemInAsyncStorage(asyncStorageKeys.LikedIds, this.saveNewArray)
       }
 }
